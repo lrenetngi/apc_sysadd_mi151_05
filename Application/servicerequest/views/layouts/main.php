@@ -40,7 +40,7 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
                 $menuItems[] = ['label' => 'Service Request', 'url' => ['service-request/index']];
-                $menuItems[] = ['label' => 'Reports', 'url' => ['#']];
+                $menuItems[] = ['label' => 'Reports', 'url' => ['reports/index']];
                 $menuItems[] = ['label' => 'Employees', 'url' => ['#']];
                 $menuItems[] = [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
