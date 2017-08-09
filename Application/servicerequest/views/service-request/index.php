@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 return ['class' => 'info'];
             } else  if($model->request_status == 'Done!')
             {
-                return ['class' => 'success'];
+                return ['class' => 'alert-greener'];
             } else if($model->request_status == 'Cancelled!')
             {
                 return ['class' => 'danger'];
