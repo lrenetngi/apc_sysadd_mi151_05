@@ -116,7 +116,15 @@ a.desc:after {
 
 .alert-greener {
 
-    color: #4F8350;
-    background-color: #4F8350;
-    border-color: #d6e9c6;
+    border-color: #19B99A;
+    background: #20A286;
+    color: #fff;
+}
+
+.alert-done {
+
+    border-color: #19B99A;
+    background: #20A286;
+    color: #fff;
+
 }
