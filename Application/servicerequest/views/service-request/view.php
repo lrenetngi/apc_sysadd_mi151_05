@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Servicerequest */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Servicerequests', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Service Requests', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="servicerequest-view">
