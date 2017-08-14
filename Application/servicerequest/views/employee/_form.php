@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'servEmployee_fname')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'servEmployee_status')->dropDownlist(['Available' => 'Available', 'Not Available' => 'Not Available',]) ?>
+    <?= $form->field($model, 'servEmployee_status')->dropDownlist(['Available' => 'Available', 'Not Available' => 'Not Available',], ['style' => 'width:200px']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
