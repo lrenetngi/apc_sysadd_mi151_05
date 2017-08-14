@@ -41,7 +41,7 @@ AppAsset::register($this);
             } else {
                 $menuItems[] = ['label' => 'Service Request', 'url' => ['service-request/index']];
                 $menuItems[] = ['label' => 'Employees', 'url' => ['employee/index']];
-                $menuItems[] = ['label' => 'Hotel Guest List', 'url' => ['hotel-guest/index']]
+                $menuItems[] = ['label' => 'Hotel Guest List', 'url' => ['hotel-guest/index']];
                 $menuItems[] = ['label' => 'History', 'url' => ['history']];
                 $menuItems[] = [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
