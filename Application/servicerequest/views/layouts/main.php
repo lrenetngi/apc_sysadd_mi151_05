@@ -43,7 +43,7 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'Employees', 'url' => ['employee/index']];
                 $menuItems[] = ['label' => 'Hotel Guest List', 'url' => ['hotel-guest/index']];
                 $menuItems[] = ['label' => 'History', 'url' => ['history']];
-                $menuItems[] = ['label' => 'Help' 'url' => ['help']];
+                $menuItems[] = ['label' => 'Help', 'url' => ['help']];
                 $menuItems[] = [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
