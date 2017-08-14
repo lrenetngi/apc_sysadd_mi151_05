@@ -43,7 +43,7 @@ class Servicerequest extends \yii\db\ActiveRecord
             [['request_title', 'request_details', 'request_category'], 'string', 'max' => 45],
             [['room_no', 'request_status'], 'string', 'max' => 20],
             [['employee_id'], 'exist', 'skipOnError' => true, 'targetClass' => Employee::className(), 'targetAttribute' => ['employee_id' => 'id']],
-            [['hotelguest_id'], 'exist', 'skipOnError' => true, 'targetClass' => Hotelguest::className(), 'targetAttribute' => ['hotelguest_id' => 'id']],
+           // [['hotelguest_id'], 'exist', 'skipOnError' => true, 'targetClass' => Hotelguest::className(), 'targetAttribute' => ['hotelguest_id' => 'id']],
         ];
     }
 
