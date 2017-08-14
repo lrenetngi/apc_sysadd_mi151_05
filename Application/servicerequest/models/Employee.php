@@ -10,6 +10,7 @@ use Yii;
  * @property integer $id
  * @property string $servEmployee_lname
  * @property string $servEmployee_fname
+ * @property string $servEmployee_status
  *
  * @property CustomerservicedeptHasEmployee[] $customerservicedeptHasEmployees
  * @property Customerservicedept[] $customerservicedepts
@@ -32,6 +33,7 @@ class Employee extends \yii\db\ActiveRecord
     {
         return [
             [['servEmployee_lname', 'servEmployee_fname'], 'string', 'max' => 45],
+            [['servEmployee_status'], 'string', 'max' => 20],
         ];
     }
 
@@ -44,6 +46,7 @@ class Employee extends \yii\db\ActiveRecord
             'id' => 'ID',
             'servEmployee_lname' => 'Serv Employee Lname',
             'servEmployee_fname' => 'Serv Employee Fname',
+            'servEmployee_status' => 'Serv Employee Status',
         ];
     }
 
