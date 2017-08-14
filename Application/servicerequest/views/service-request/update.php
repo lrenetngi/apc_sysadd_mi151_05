@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Servicerequest */
 
 $this->title = 'Update Servicerequest: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Service Requests', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Servicerequests', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

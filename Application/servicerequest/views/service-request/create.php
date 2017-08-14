@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Servicerequest */
 
-$this->title = 'New Service Request';
-$this->params['breadcrumbs'][] = ['label' => 'Service Requests', 'url' => ['index']];
+$this->title = 'Create Servicerequest';
+$this->params['breadcrumbs'][] = ['label' => 'Servicerequests', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="servicerequest-create">

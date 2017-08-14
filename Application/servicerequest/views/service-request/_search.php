@@ -21,13 +21,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'request_details') ?>
 
+    <?= $form->field($model, 'request_category') ?>
+
     <?= $form->field($model, 'room_no') ?>
 
-    <?= $form->field($model, 'assigned_to') ?>
-
-    <?php // echo $form->field($model, 'date') ?>
-
     <?php // echo $form->field($model, 'request_status') ?>
+
+    <?php // echo $form->field($model, 'date_started') ?>
+
+    <?php // echo $form->field($model, 'date_finished') ?>
+
+    <?php // echo $form->field($model, 'hotelguest_id') ?>
+
+    <?php // echo $form->field($model, 'employee_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
