@@ -31,6 +31,10 @@ use kartik\datetime\DateTimePicker;
                         ]
                     ])?>
 
+    <?= $form->field($model, 'hotelguest_id')->textInput() ?>
+
+    <?= $form->field($model, 'employee_id')->textInput() ?>
+
     <?= $form->field($model, 'date_finished')->widget(
                     DateTimePicker::className(), [
                     'options' => ['placeholder' => 'Render Finished'],
@@ -38,10 +42,6 @@ use kartik\datetime\DateTimePicker;
                     'autoclose' => true,
                     ]
         ])?>
-
-    <?= $form->field($model, 'hotelguest_id')->textInput() ?>
-
-    <?= $form->field($model, 'employee_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
