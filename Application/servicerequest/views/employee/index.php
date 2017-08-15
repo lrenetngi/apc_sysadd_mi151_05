@@ -21,11 +21,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'rowOptions' => fuction ($model)
+        'rowOptions' => function ($model)
         {
             if($model->servEmployee_status == 'Available')
             {
                 return['class' => 'success'];
+            } else if($model->servEmployee_status == 'Not Available')
+            {
+                return['class' => 'danger'];
             }
         },
         'columns' => [
