@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\datetime\DateTimePicker;
 use app\models\Hotelguest;
+use app\models\Employee;
 use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
@@ -42,7 +43,13 @@ use yii\helpers\ArrayHelper;
                             
                             ]); ?>
 
-    <?= $form->field($model, 'employee_id')->textInput() ?>
+    <?= $form->field($model, 'employee_id')->dropDownList(
+                                ArrayHelper::map(Employee::find()->all(), 'id', 'id'),
+                                [
+                                    'prompt' => 'Select Employee ID',
+                                    'style' => 'width:200px'
+                                
+                               ]); ?>
 
     <?= $form->field($model, 'date_finished')->widget(
                     DateTimePicker::className(), [
