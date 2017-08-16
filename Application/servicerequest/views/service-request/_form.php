@@ -31,7 +31,7 @@ use kartik\datetime\DateTimePicker;
                         ]
                     ])?>
 
-    <?= $form->field($model, 'hotelguest_id')->textInput() ?>
+    <?= $form->field($model, 'hotelguest_id')->dropDownList(yii\helpers\ArrayHelper::map(hotelguest_id::find()->all(), 'id')) ?>
 
     <?= $form->field($model, 'employee_id')->textInput() ?>
 
