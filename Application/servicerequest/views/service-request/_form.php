@@ -30,13 +30,15 @@ use yii\helpers\ArrayHelper;
                         'options' => ['placeholder' => 'Render Time'],
                         'pluginOptions' => [
                         'autoclose' => true,
+
                         ]
-                    ],['style' => 'width::200px'])?>
+                    ])?>
 
     <?= $form->field($model, 'hotelguest_id')->dropDownList(
                                 ArrayHelper::map(Hotelguest::find()->all(), 'id', 'id'),
                                 [
                                     'prompt' => ' Select Hotel Guest ID',
+                                    'style' => 'width:200px'
                             
                             ]); ?>
 
