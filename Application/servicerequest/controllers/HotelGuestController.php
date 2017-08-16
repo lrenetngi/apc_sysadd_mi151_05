@@ -8,7 +8,7 @@ use app\models\HotelGuestSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\filters\AccessControl;
 /**
  * HotelGuestController implements the CRUD actions for Hotelguest model.
  */
@@ -20,6 +20,17 @@ class HotelGuestController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class'  => AccessControl::className(),
+                'only' => ['create', 'update'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@']
+                    ],
+                ]
+
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
