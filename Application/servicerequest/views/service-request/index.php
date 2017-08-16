@@ -26,6 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
             if($model->request_status = 'Done')
             {
                 return['class' => 'success'];
+            } else if($model->request_status = 'On Going')
+            {
+                return['class' => 'info'];
+            } else if($model->request_status = 'Cancelled')
+            {
+                return['class' => 'danger'];
+            } else if($model->request_status = 'High Priority')
+            {
+                return['class' => 'warning'];
             }
         },
         'columns' => [
