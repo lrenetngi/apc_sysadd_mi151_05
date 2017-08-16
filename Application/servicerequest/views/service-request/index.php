@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'room_no',
             'request_status',
             'date_started',
-            // 'date_finished',
+            'date_finished',
             // 'hotelguest_id',
             // 'employee_id',
 
