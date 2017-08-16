@@ -21,18 +21,18 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'rowOptions' => function ($model)
+        'rowOptions' => function($model)
         {
-            if($model->request_status = 'Done')
+            if($model->request_status == 'Done')
             {
                 return['class' => 'success'];
-            } else if($model->request_status = 'On Going')
+            } else if($model->request_status == 'On Going')
             {
                 return['class' => 'info'];
-            } else if($model->request_status = 'Cancelled')
+            } else if($model->request_status == 'Cancelled')
             {
                 return['class' => 'danger'];
-            } else if($model->request_status = 'High Priority')
+            } else if($model->request_status == 'High Priority')
             {
                 return['class' => 'warning'];
             }
