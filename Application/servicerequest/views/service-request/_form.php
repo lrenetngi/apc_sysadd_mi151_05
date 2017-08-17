@@ -40,16 +40,16 @@ use yii\helpers\ArrayHelper;
                                 [
                                     'prompt' => ' Select Hotel Guest ID',
                                     'style' => 'width:200px'
-                            
-                            ]); ?>
+                                ]
+                            ); ?>
 
     <?= $form->field($model, 'employee_id')->dropDownList(
                                 ArrayHelper::map(Employee::find()->all(), 'id', 'id'),
                                 [
                                     'prompt' => 'Select Employee ID',
                                     'style' => 'width:200px'
-                                
-                               ]); ?>
+                                ]
+                            ); ?>
 
     <?= $form->field($model, 'date_finished')->widget(
                     DateTimePicker::className(), [
