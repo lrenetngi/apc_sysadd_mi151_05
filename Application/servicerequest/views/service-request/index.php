@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use kartik\widget\DateTimePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ServiceRequestSearch */
@@ -24,32 +23,33 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'rowOptions' => function($model)
         {
-            if($model->request_status == 'On Going!')
+            if($model->request_status == 'Done')
             {
-                return ['class' => 'info'];
-            } else  if($model->request_status == 'Done!')
+                return['class' => 'success'];
+            } else if($model->request_status == 'On Going')
             {
-                return ['class' => 'success'];
-            } else if($model->request_status == 'Cancelled!')
+                return['class' => 'info'];
+            } else if($model->request_status == 'Cancelled')
             {
-                return ['class' => 'danger'];
-            } else if($model->request_status == 'High Priority!')
+                return['class' => 'danger'];
+            } else if($model->request_status == 'High Priority')
             {
-                return ['class' => 'warning'];
+                return['class' => 'warning'];
             }
-
         },
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
             'request_title',
-            //'request_details:ntext',
+            //'request_details',
+            //'request_category',
             'room_no',
-            'assigned_to',
-            'date',
             'request_status',
-            
+            'date_started',
+            'date_finished',
+            // 'hotelguest_id',
+            // 'employee_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

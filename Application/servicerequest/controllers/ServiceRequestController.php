@@ -22,15 +22,14 @@ class ServiceRequestController extends Controller
     {
         return [
             'access' => [
-                    'class' => AccessControl::classname(),
-                    'only' => ['create', 'update'],
-                    'rules' =>
+                'class' => AccessControl::className(),
+                'only' => ['create', 'update'],
+                'rules' => [
                     [
-                        [
-                            'allow' => true,
-                            'roles' => ['@']
-                        ],
-                    ]
+                        'allow' => true,
+                        'roles' => ['@']
+                    ],
+                ]
             ],
             'verbs' => [
                 'class' => VerbFilter::className(),

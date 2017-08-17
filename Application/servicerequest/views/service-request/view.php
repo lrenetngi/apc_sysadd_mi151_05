@@ -30,11 +30,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'request_title',
-            'request_details:ntext',
+            'request_details',
+            'request_category',
             'room_no',
-            'assigned_to',
-            'date',
             'request_status',
+            'date_started',
+            'date_finished',
+            'hotelguest_id',
+            'employee_id',
         ],
     ]) ?>
 
