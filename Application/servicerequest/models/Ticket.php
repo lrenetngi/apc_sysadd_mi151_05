@@ -70,11 +70,11 @@ class Ticket extends \yii\db\ActiveRecord
             'time_end' => 'Time End',
             'time_alloted' => 'Time Alloted',
             'escalation_level' => 'Escalation Level',
-            'desc' => 'Desc',
+            'desc' => 'Description',
             'check_in_id' => 'Check In ID',
             'employee_respond_id' => 'Employee Respond ID',
             'department_id' => 'Department ID',
-            'category_id' => 'Category ID',
+            'category_id' => 'Category',
             'employee_create_id' => 'Employee Create ID',
         ];
     }
