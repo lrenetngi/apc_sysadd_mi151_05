@@ -55,8 +55,8 @@ class Employee extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'emp_name' => 'Employee Name',
-           // 'position' => 'Position',
-          //  'department_id' => 'Department ID',
+            'position' => 'Position',
+            'department_id' => 'Department',
            // 'position_id' => 'Position ID',
             //'shift_id' => 'Shift ID',
         ];
@@ -65,9 +65,9 @@ class Employee extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    /* public function getDepartment()
+    public function getDepartment()
     {
-        return $this->hasOne(Department::className(), ['id' => 'department_id']);
+        return $this->hasOne(Department::className(), ['id' => 'dept_name']);
     }
 
     /**

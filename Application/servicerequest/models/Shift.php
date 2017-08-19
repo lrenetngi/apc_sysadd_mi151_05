@@ -33,10 +33,10 @@ class Shift extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sched_start', 'sched_end', 'department_id', 'supervisor'], 'required'],
+            [['sched_start', 'sched_end', 'department_id'], 'required'],
             [['sched_start', 'sched_end'], 'safe'],
-            [['department_id', 'supervisor'], 'integer'],
-            [['department_id'], 'exist', 'skipOnError' => true, 'targetClass' => Department::className(), 'targetAttribute' => ['department_id' => 'id']],
+            [['supervisor'], 'integer'],
+          //  [['department_id'], 'exist', 'skipOnError' => true, 'targetClass' => Department::className(), 'targetAttribute' => ['department_id' => 'id']],
             [['supervisor'], 'exist', 'skipOnError' => true, 'targetClass' => Employee::className(), 'targetAttribute' => ['supervisor' => 'id']],
         ];
     }
@@ -50,7 +50,7 @@ class Shift extends \yii\db\ActiveRecord
             'id' => 'ID',
             'sched_start' => 'Time In',
             'sched_end' => 'Time Out',
-            'department_id' => 'Department ID',
+            'department_id' => 'Department ',
             'supervisor' => 'Supervisor',
         ];
     }
@@ -66,7 +66,7 @@ class Shift extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getDepartment()
+ /*   public function getDepartment()
     {
         return $this->hasOne(Department::className(), ['id' => 'department_id']);
     }
@@ -74,10 +74,10 @@ class Shift extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSupervisor0()
+  /*  public function getSupervisor0()
     {
         return $this->hasOne(Employee::className(), ['id' => 'supervisor']);
     }
-    
+    */    
 
 }

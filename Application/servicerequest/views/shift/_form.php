@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\datetime\DateTimePicker;
+use app\models\Department;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Shift */
@@ -31,9 +33,13 @@ use kartik\datetime\DateTimePicker;
     						]
     ) ?>
 
-    <?= $form->field($model, 'department_id')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'supervisor')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'department_id')->dropDownlist(
+                                ArrayHelper::map(Department::find()->all(), 'dept_name', 'dept_name'),
+                                [
+                                    'prompt' => 'Select Department',
+                                    'style' => 'width:250px'
+                                ]
+    ); ?>
 
 
     <div class="form-group">
