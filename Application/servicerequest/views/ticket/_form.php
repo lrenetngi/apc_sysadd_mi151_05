@@ -35,15 +35,10 @@ use kartik\datetime\DateTimePicker;
 
     <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'check_in_id')->textInput() ?>
+    <?= $form->field($model, 'category_id')->textInput() ?>
 
     <?= $form->field($model, 'employee_respond_id')->textInput() ?>
 
-    <?= $form->field($model, 'department_id')->textInput() ?>
-
-    <?= $form->field($model, 'category_id')->textInput() ?>
-
-    <?= $form->field($model, 'employee_create_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

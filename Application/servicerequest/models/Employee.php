@@ -37,11 +37,11 @@ class Employee extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['emp_name', 'position', 'shift_id', 'department_id'], 'required'],
+            [['emp_name', 'position', 'shift_id'], 'required'],
             [['shift_id'], 'integer'],
             [['emp_name'], 'string', 'max' => 120],
             [['position'], 'string', 'max' => 45],
-            [['department_id'], 'exist', 'skipOnError' => true, 'targetClass' => Department::className(), 'targetAttribute' => ['department_id' => 'id']],
+          //  [['department_id'], 'exist', 'skipOnError' => true, 'targetClass' => Department::className(), 'targetAttribute' => ['department_id' => 'id']],
             [['position_id'], 'exist', 'skipOnError' => true, 'targetClass' => Position::className(), 'targetAttribute' => ['position_id' => 'id']],
            [['shift_id'], 'exist', 'skipOnError' => true, 'targetClass' => Shift::className(), 'targetAttribute' => ['shift_id' => 'id']],
         ];
@@ -97,7 +97,7 @@ class Employee extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-   /* public function getTickets()
+    public function getTickets()
     {
         return $this->hasMany(Ticket::className(), ['employee_respond_id' => 'id']);
     }
@@ -105,8 +105,9 @@ class Employee extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTickets0()
+  /*  public function getTickets0()
     {
         return $this->hasMany(Ticket::className(), ['employee_create_id' => 'id']);
     }
+    */
 }

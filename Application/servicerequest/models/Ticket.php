@@ -44,16 +44,16 @@ class Ticket extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['status', 'check_in_id', 'employee_respond_id', 'department_id', 'category_id', 'employee_create_id'], 'required'],
+            [['status','category_id'], 'required'],
             [['time_start', 'time_end'], 'safe'],
             [['check_in_id', 'employee_respond_id', 'department_id', 'category_id', 'employee_create_id'], 'integer'],
             [['desc'], 'string'],
             [['request_title', 'status'], 'string', 'max' => 45],
-            [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
-            [['check_in_id'], 'exist', 'skipOnError' => true, 'targetClass' => CheckIn::className(), 'targetAttribute' => ['check_in_id' => 'id']],
-            [['department_id'], 'exist', 'skipOnError' => true, 'targetClass' => Department::className(), 'targetAttribute' => ['department_id' => 'id']],
-            [['employee_respond_id'], 'exist', 'skipOnError' => true, 'targetClass' => Employee::className(), 'targetAttribute' => ['employee_respond_id' => 'id']],
-            [['employee_create_id'], 'exist', 'skipOnError' => true, 'targetClass' => Employee::className(), 'targetAttribute' => ['employee_create_id' => 'id']],
+          //  [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
+         //   [['check_in_id'], 'exist', 'skipOnError' => true, 'targetClass' => CheckIn::className(), 'targetAttribute' => ['check_in_id' => 'id']],
+        //    [['department_id'], 'exist', 'skipOnError' => true, 'targetClass' => Department::className(), 'targetAttribute' => ['department_id' => 'id']],
+         //   [['employee_respond_id'], 'exist', 'skipOnError' => true, 'targetClass' => Employee::className(), 'targetAttribute' => ['employee_respond_id' => 'id']],
+         //   [['employee_create_id'], 'exist', 'skipOnError' => true, 'targetClass' => Employee::className(), 'targetAttribute' => ['employee_create_id' => 'id']],
         ];
     }
 
@@ -82,48 +82,49 @@ class Ticket extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCategory()
-    {
-        return $this->hasOne(Category::className(), ['id' => 'category_id']);
-    }
+  //  public function getCategory()
+   // {
+   //     return $this->hasOne(Category::className(), ['id' => 'category_id']);
+  //  }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCheckIn()
-    {
-        return $this->hasOne(CheckIn::className(), ['id' => 'check_in_id']);
-    }
+   // public function getCheckIn()
+  //  {
+    //    return $this->hasOne(CheckIn::className(), ['id' => 'check_in_id']);
+    //}
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getDepartment()
-    {
-        return $this->hasOne(Department::className(), ['id' => 'department_id']);
-    }
+ //   public function getDepartment()
+  //  {
+     //   return $this->hasOne(Department::className(), ['id' => 'department_id']);
+   // }
 
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getEmployeeRespond()
     {
-        return $this->hasOne(Employee::className(), ['id' => 'employee_respond_id']);
+       return $this->hasOne(Employee::className(), ['id' => 'employee_respond_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEmployeeCreate()
-    {
-        return $this->hasOne(Employee::className(), ['id' => 'employee_create_id']);
-    }
+  //  public function getEmployeeCreate()
+   // {
+     //   return $this->hasOne(Employee::className(), ['id' => 'employee_create_id']);
+   // }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTranscripts()
-    {
-        return $this->hasMany(Transcript::className(), ['ticket_id1' => 'id']);
-    }
+  //*  public function getTranscripts()
+  //  {
+//        return $this->hasMany(Transcript::className(), ['ticket_id1' => 'id']);
+  //  }
+
 }
