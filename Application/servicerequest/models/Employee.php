@@ -37,13 +37,13 @@ class Employee extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['emp_name', 'position', 'department_id', 'position_id', 'shift_id'], 'required'],
-            [['department_id', 'position_id', 'shift_id'], 'integer'],
+            [['emp_name', 'position', 'shift_id', 'department_id'], 'required'],
+            [['shift_id'], 'integer'],
             [['emp_name'], 'string', 'max' => 120],
             [['position'], 'string', 'max' => 45],
             [['department_id'], 'exist', 'skipOnError' => true, 'targetClass' => Department::className(), 'targetAttribute' => ['department_id' => 'id']],
             [['position_id'], 'exist', 'skipOnError' => true, 'targetClass' => Position::className(), 'targetAttribute' => ['position_id' => 'id']],
-            [['shift_id'], 'exist', 'skipOnError' => true, 'targetClass' => Shift::className(), 'targetAttribute' => ['shift_id' => 'id']],
+           [['shift_id'], 'exist', 'skipOnError' => true, 'targetClass' => Shift::className(), 'targetAttribute' => ['shift_id' => 'id']],
         ];
     }
 
@@ -54,18 +54,18 @@ class Employee extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'emp_name' => 'Emp Name',
-            'position' => 'Position',
-            'department_id' => 'Department ID',
-            'position_id' => 'Position ID',
-            'shift_id' => 'Shift ID',
+            'emp_name' => 'Employee Name',
+           // 'position' => 'Position',
+          //  'department_id' => 'Department ID',
+           // 'position_id' => 'Position ID',
+            //'shift_id' => 'Shift ID',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getDepartment()
+    /* public function getDepartment()
     {
         return $this->hasOne(Department::className(), ['id' => 'department_id']);
     }
@@ -73,7 +73,7 @@ class Employee extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPosition0()
+   /* public function getPosition0()
     {
         return $this->hasOne(Position::className(), ['id' => 'position_id']);
     }
@@ -89,7 +89,7 @@ class Employee extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getShifts()
+   /* public function getShifts()
     {
         return $this->hasMany(Shift::className(), ['supervisor' => 'id']);
     }
@@ -97,7 +97,7 @@ class Employee extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTickets()
+   /* public function getTickets()
     {
         return $this->hasMany(Ticket::className(), ['employee_respond_id' => 'id']);
     }

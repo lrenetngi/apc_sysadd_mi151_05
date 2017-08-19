@@ -33,7 +33,7 @@ class Shift extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sched_start', 'sched_end'], 'required'],
+            [['sched_start', 'sched_end', 'department_id', 'supervisor'], 'required'],
             [['sched_start', 'sched_end'], 'safe'],
             [['department_id', 'supervisor'], 'integer'],
             [['department_id'], 'exist', 'skipOnError' => true, 'targetClass' => Department::className(), 'targetAttribute' => ['department_id' => 'id']],
@@ -48,8 +48,8 @@ class Shift extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'sched_start' => 'Sched Start',
-            'sched_end' => 'Sched End',
+            'sched_start' => 'Time In',
+            'sched_end' => 'Time Out',
             'department_id' => 'Department ID',
             'supervisor' => 'Supervisor',
         ];
@@ -78,4 +78,6 @@ class Shift extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Employee::className(), ['id' => 'supervisor']);
     }
+    
+
 }

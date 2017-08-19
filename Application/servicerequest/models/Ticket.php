@@ -44,9 +44,9 @@ class Ticket extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['status', 'time_alloted', 'check_in_id', 'employee_respond_id', 'department_id', 'category_id', 'employee_create_id'], 'required'],
-            [['time_start', 'time_end', 'time_alloted'], 'safe'],
-            [['escalation_level', 'check_in_id', 'employee_respond_id', 'department_id', 'category_id', 'employee_create_id'], 'integer'],
+            [['status', 'check_in_id', 'employee_respond_id', 'department_id', 'category_id', 'employee_create_id'], 'required'],
+            [['time_start', 'time_end'], 'safe'],
+            [['check_in_id', 'employee_respond_id', 'department_id', 'category_id', 'employee_create_id'], 'integer'],
             [['desc'], 'string'],
             [['request_title', 'status'], 'string', 'max' => 45],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],

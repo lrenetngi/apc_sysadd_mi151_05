@@ -53,7 +53,7 @@ class Department extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEmployees()
+    /* public function getEmployees()
     {
         return $this->hasMany(Employee::className(), ['department_id' => 'id']);
     }
@@ -61,7 +61,7 @@ class Department extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPositions()
+   /* public function getPositions()
     {
         return $this->hasMany(Position::className(), ['department_id' => 'id']);
     }
@@ -69,7 +69,7 @@ class Department extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getShifts()
+  /*  public function getShifts()
     {
         return $this->hasMany(Shift::className(), ['department_id' => 'id']);
     }
@@ -77,8 +77,10 @@ class Department extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTickets()
+   /* public function getTickets()
     {
         return $this->hasMany(Ticket::className(), ['department_id' => 'id']);
     }
+    */
 }
+

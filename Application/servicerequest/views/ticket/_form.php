@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\datetime\DateTimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Ticket */
@@ -16,13 +17,21 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'time_start')->textInput() ?>
+    <?= $form->field($model, 'time_start')->widget(
+                             DateTimePicker::className(), [
+                                'options' => ['placeholder' => 'Time Started'],
+                                'pluginOptions' => ['autoclose' => true,]
+                             ]
+    ) ?>
 
-    <?= $form->field($model, 'time_end')->textInput() ?>
+    <?= $form->field($model, 'time_end')->widget(
+                              DateTimePicker::className(), [
+                              'options' => ['placeholder' => 'Time Ended'],
+                              'pluginOptions' => ['autoclose' => true,]
+                              ]
 
-    <?= $form->field($model, 'time_alloted')->textInput() ?>
+    ) ?>
 
-    <?= $form->field($model, 'escalation_level')->textInput() ?>
 
     <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
 
