@@ -37,7 +37,7 @@ class Employee extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['emp_name', 'position', 'shift_id'], 'required'],
+            [['emp_name', 'position'], 'required'],
             [['shift_id'], 'integer'],
             [['emp_name'], 'string', 'max' => 120],
             [['position'], 'string', 'max' => 45],
