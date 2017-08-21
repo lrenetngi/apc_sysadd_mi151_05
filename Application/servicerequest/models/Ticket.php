@@ -44,7 +44,7 @@ class Ticket extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['status','category_id'], 'required'],
+            [['status'], 'required'],
             [['time_start', 'time_end'], 'safe'],
             [['check_in_id', 'employee_respond_id', 'department_id', 'category_id', 'employee_create_id'], 'integer'],
             [['desc'], 'string'],

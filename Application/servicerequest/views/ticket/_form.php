@@ -35,8 +35,6 @@ use kartik\datetime\DateTimePicker;
 
     <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'category_id')->textInput() ?>
-
     <?= $form->field($model, 'employee_respond_id')->textInput() ?>
 
 
