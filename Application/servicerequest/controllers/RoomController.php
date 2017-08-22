@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Room;
-use app\models\RoomSearch;
+use app\models\RoomModel;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,7 +35,7 @@ class RoomController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new RoomSearch();
+        $searchModel = new RoomModel();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
