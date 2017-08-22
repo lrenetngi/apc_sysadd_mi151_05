@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\datetime\DateTimePicker;
+use app\models\Employee;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Ticket */
@@ -35,7 +37,13 @@ use kartik\datetime\DateTimePicker;
 
     <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'employee_respond_id')->textInput() ?>
+    <?= $form->field($model, 'employee_respond_id')->dropDownlist(
+                                    ArrayHelper::map(Employee::find()->all(), 'id', 'id'),
+                                    [
+                                      'prompt' => 'Select Employee',
+                                      'style' => 'width:250px'
+                                    ]
+    ); ?>
 
 
     <div class="form-group">
