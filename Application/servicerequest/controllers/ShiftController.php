@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Shift;
-use app\models\ShiftSearch;
+use app\models\ShiftModel;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,7 +35,7 @@ class ShiftController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new ShiftSearch();
+        $searchModel = new ShiftModel();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
