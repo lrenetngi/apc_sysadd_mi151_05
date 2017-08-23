@@ -108,7 +108,7 @@ class Ticket extends \yii\db\ActiveRecord
      */
     public function getEmployeeRespond()
     {
-        return $this->hasOne(Employee::className(), ['id' => 'employee_respond_id']);
+        return $this->hasOne(Employee::className(), ['id' => 'ID']);
     }
 
     /**

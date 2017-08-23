@@ -105,8 +105,9 @@ class Employee extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTickets0()
+  /*  public function getTickets0()
     {
         return $this->hasMany(Ticket::className(), ['employee_create_id' => 'id']);
     }
+    */
 }
