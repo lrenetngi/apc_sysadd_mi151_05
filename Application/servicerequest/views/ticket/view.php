@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'desc:ntext',
         //  'check_in_id',
             'employee_respond_id',
-            'department_id',
+        //   'department_id',
         //   'category_id',
         //  'employee_create_id',
         ],
