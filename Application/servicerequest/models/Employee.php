@@ -54,7 +54,7 @@ class Employee extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'emp_name' => 'Emp Name',
+            'emp_name' => 'Employee Name',
             'position' => 'Position',
             'department_id' => 'Department ID',
             'position_id' => 'Position ID',
