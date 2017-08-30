@@ -17,7 +17,8 @@ use app\models\Employee;
 
     <?= $form->field($model, 'request_title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'status')->dropDownlist(['On Going' => 'On Going', 'Done' => 'Done', 'High Priority' => 'High Priority',
+                                                            'Cancelled' => 'Cancelled'], ['style' => 'width:200px']) ?>
 
     <?= $form->field($model, 'time_start')->widget(
                                 DateTimePicker::className(), [
