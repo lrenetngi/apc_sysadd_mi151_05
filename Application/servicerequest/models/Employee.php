@@ -13,6 +13,7 @@ use Yii;
  * @property integer $department_id
  * @property integer $position_id
  * @property integer $shift_id
+ * @property string $status
  *
  * @property Department $department
  * @property Position $position0
@@ -37,10 +38,11 @@ class Employee extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['emp_name', 'position'], 'required'],
+            [['emp_name', 'position', 'status'], 'required'],
             [['department_id', 'position_id', 'shift_id'], 'integer'],
             [['emp_name'], 'string', 'max' => 120],
             [['position'], 'string', 'max' => 45],
+            [['status'], 'string', 'max' => 15],
             [['department_id'], 'exist', 'skipOnError' => true, 'targetClass' => Department::className(), 'targetAttribute' => ['department_id' => 'id']],
             [['position_id'], 'exist', 'skipOnError' => true, 'targetClass' => Position::className(), 'targetAttribute' => ['position_id' => 'id']],
             [['shift_id'], 'exist', 'skipOnError' => true, 'targetClass' => Shift::className(), 'targetAttribute' => ['shift_id' => 'id']],
@@ -54,11 +56,12 @@ class Employee extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'emp_name' => 'Employee Name',
+            'emp_name' => 'Emp Name',
             'position' => 'Position',
             'department_id' => 'Department ID',
             'position_id' => 'Position ID',
             'shift_id' => 'Shift ID',
+            'status' => 'Status',
         ];
     }
 
@@ -105,9 +108,8 @@ class Employee extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-  /*  public function getTickets0()
+    public function getTickets0()
     {
         return $this->hasMany(Ticket::className(), ['employee_create_id' => 'id']);
     }
-    */
 }
