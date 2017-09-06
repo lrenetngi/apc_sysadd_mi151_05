@@ -70,7 +70,7 @@ class Ticket extends \yii\db\ActiveRecord
             'time_end' => 'Time End',
             'time_alloted' => 'Time Alloted',
             'escalation_level' => 'Escalation Level',
-            'desc' => 'Details',
+            'desc' => 'Desc',
             'check_in_id' => 'Check In ID',
             'employee_respond_id' => 'Employee Respond ID',
             'department_id' => 'Department ID',
@@ -108,7 +108,7 @@ class Ticket extends \yii\db\ActiveRecord
      */
     public function getEmployeeRespond()
     {
-        return $this->hasOne(Employee::className(), ['id' => 'ID']);
+        return $this->hasOne(Employee::className(), ['id' => 'employee_respond_id']);
     }
 
     /**

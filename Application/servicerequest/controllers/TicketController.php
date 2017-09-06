@@ -68,7 +68,7 @@ class TicketController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            $model->time_start = date('d-m-y h:i:s');
+            $model->time_start = date('y-m-d h:i:s');
             return $this->render('create', [
                 'model' => $model,
             ]);
@@ -88,10 +88,10 @@ class TicketController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-                $model->time_end = date('d-m-y h:i:s');            
+                $model->time_end = date('y-m-d h:i:s');        
                 return $this->render('update', [
                 'model' => $model,
-            ]);
+            ]); 
 
         }
     }

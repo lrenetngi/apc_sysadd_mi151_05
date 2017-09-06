@@ -30,15 +30,8 @@ use app\models\Category;
     ); ?>
 
 
-    <?= $form->field($model, 'time_end')->widget(DateTimePicker::className(), 
-                                        [
-                                            'value' => date('d-m-y h:i:s'),
-                                            'disabled' => true,
-
-                                        ]
+    <?= $form->field($model, 'time_end')->textInput(['readOnly' => true]) ?>
                                
-                                
-    ); ?>
 
     <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
 
@@ -50,7 +43,7 @@ use app\models\Category;
                                     ]
     ); ?>
 
-    <?= $form->field($model, 'category')->dropDownlist(['Housekeeping' => 'Housekeeping', 'Engineering' => 'Engineering', 'Food and Beverages' => 'Food and Beverages'], ['style' => 'width:200px']) ?>
+    <?= $form->field($model, 'category')->dropDownlist(['Housekeeping' => 'Housekeeping', 'Engineering' => 'Engineering', 'Food and Beverages' => 'Food and Beverages'], ['style' => 'width:200px'], ['prompt' => 'Select Category']); ?>
                             
 
 
