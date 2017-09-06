@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use kartik\datetime\DateTimePicker;
 use yii\helpers\ArrayHelper;
 use app\models\Employee;
+use app\models\Category;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Ticket */
@@ -20,18 +21,23 @@ use app\models\Employee;
     <?= $form->field($model, 'status')->dropDownlist(['On Going' => 'On Going', 'Done' => 'Done', 'High Priority' => 'High Priority',
                                                             'Cancelled' => 'Cancelled'], ['style' => 'width:200px']) ?>
 
-    <?= $form->field($model, 'time_start')->widget(
-                                DateTimePicker::className(), [
-                                'options' => ['placeholder' => 'Render Time'],
-                                'pluginOptions' => ['autoclose' => true,]
-                                ]
+    <?= $form->field($model, 'time_start')->widget(DateTimePicker::className(),
+                                            [
+                                                'value' => date('d-m-y h:i:s'),
+                                                'disabled' => true
+                                            ]
+
     ); ?>
 
-    <?= $form->field($model, 'time_end')->widget(
-                                DateTimePicker::className(), [
-                                'options' => ['placeholder' => 'Render End'],
-                                'pluginOptions' => ['autoclose' => true,]
-                                ]
+
+    <?= $form->field($model, 'time_end')->widget(DateTimePicker::className(), 
+                                        [
+                                            'value' => date('d-m-y h:i:s'),
+                                            'disabled' => true,
+
+                                        ]
+                               
+                                
     ); ?>
 
     <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
@@ -43,6 +49,9 @@ use app\models\Employee;
                                         'style' => 'width:200px'
                                     ]
     ); ?>
+
+    <?= $form->field($model, 'category')->dropDownlist(['Housekeeping' => 'Housekeeping', 'Engineering' => 'Engineering', 'Food and Beverages' => 'Food and Beverages'], ['style' => 'width:200px']) ?>
+                            
 
 
     <div class="form-group">
