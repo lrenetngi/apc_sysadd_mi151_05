@@ -1,4 +1,8 @@
 <?php
+
+    return array(
+            'timeZone' => 'Asia/Manila'
+        );
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/test_db.php');
 

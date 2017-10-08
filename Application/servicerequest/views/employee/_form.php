@@ -2,8 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use app\models\Department;
 use yii\helpers\ArrayHelper;
+use app\models\Department;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Employee */
@@ -19,12 +19,14 @@ use yii\helpers\ArrayHelper;
     <?= $form->field($model, 'position')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'department_id')->dropDownlist(
-                                    ArrayHelper::map(Department::find()->all(), 'id', 'id'),
-                                    [
-                                        'prompt' => 'Select Department',
-                                        'style' => 'width:200px'
-                                    ]
-    ); ?>
+                                                ArrayHelper::map(Department::find()->all(), 'id', 'id'),
+                                                [
+                                                    'prompt' => 'Select Department ID',
+                                                    'style' => 'width:200px'
+                                                ]); ?>
+
+    <?= $form->field($model, 'status')->dropDownlist(['Available' => 'Available', 'On Going' => 'On Going', 'Absent' => 'Absent'],
+                                                                ['style' => 'width:200px']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
